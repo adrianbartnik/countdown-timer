@@ -1,10 +1,15 @@
 import { Spacer, styled } from "@nextui-org/react"
+import { ReactNode } from "react";
 
 const Box = styled("div", {
   boxSizing: "border-box",
 });
 
-export const Layout = ({ children }) => (
+interface Props {
+    children?: ReactNode
+}
+
+export const Layout = ({ children }: Props) => (
   <Box
     css={{
       maxW: "100%",

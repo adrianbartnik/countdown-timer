@@ -2,7 +2,6 @@
 import { Button, Col, Container, Input, Row, Link } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import NextLink from 'next/link'
 import React from "react";
 
 

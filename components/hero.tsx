@@ -28,7 +28,7 @@ const Hero = () => {
                     </Row>
                     <Row>
                         <Text weight="bold">
-                            It's free
+                            It is free
                         </Text>
                     </Row>
                 </Grid.Container>

@@ -2,9 +2,9 @@ import { Navbar, Button, Text } from "@nextui-org/react";
 
 import React from "react";
 import { AcmeLogo } from "./acme_logo";
-import { Layout } from "./Layout";
+import { Layout } from "./layout";
 
-const Navigation = () => {
+export const Navigation = () => {
     return (
         <Layout>
             <Navbar>
@@ -34,5 +34,3 @@ const Navigation = () => {
         </Layout>
     )
 }
-
-export default Navigation
