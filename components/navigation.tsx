@@ -1,4 +1,4 @@
-import { Navbar, Button, Text } from "@nextui-org/react";
+import { Navbar, Button, Text, Link } from "@nextui-org/react";
 
 import React from "react";
 import { AcmeLogo } from "./acme_logo";
@@ -9,10 +9,12 @@ export const Navigation = () => {
         <Layout>
             <Navbar>
                 <Navbar.Brand>
-                    <AcmeLogo />
-                    <Text b color="inherit" hideIn="xs">
-                        ACME
-                    </Text>
+                    <Link href="/" color="text">
+                        <AcmeLogo />
+                        <Text b color="inherit" hideIn="xs">
+                            ACME
+                        </Text>
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Content hideIn="xs">
                     <Navbar.Link href="#123">Features</Navbar.Link>

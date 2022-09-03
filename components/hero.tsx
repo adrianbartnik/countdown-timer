@@ -2,8 +2,7 @@
 import { Grid, Row, Text } from "@nextui-org/react";
 import styles from '../styles/Home.module.css';
 
-
-const Hero = () => {
+export const Hero = () => {
     return (
         <Grid.Container gap={2} justify="center">
             <Grid.Container xs={4}>
@@ -46,5 +45,3 @@ const Hero = () => {
         </Grid.Container>
     )
 }
-
-export default Hero

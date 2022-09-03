@@ -1,30 +1,26 @@
 
-import { Button, Col, Container, Input, Row, Link } from "@nextui-org/react";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import React from "react";
+import { Button, Col, Container, Input, Row } from "@nextui-org/react";
+import { SetStateAction } from "react";
+
+type EventTimeInputFormProps = {
+    setCountdownMessage: (value: SetStateAction<string>) => void;
+    setCountdownDate: (value: SetStateAction<string>) => void;
+    setCoutndownTime: (value: SetStateAction<string>) => void;
+    createTimerCallback: () => void;
+};
 
 
-
-export const EventTimeInputForm = () => {
-    const [data, setData] = useState({ message: "", date: "", time: "" });
-    const router = useRouter();
-
-    console.log(router.query);
-
+export const EventTimeInputForm = ({ setCountdownMessage, setCountdownDate, setCoutndownTime, createTimerCallback }: EventTimeInputFormProps) => {
     return (
         <Container gap={0}>
             <Row gap={1} align="flex-end" css={{ height: '90px' }}>
-                <Col>
-                    {router.query.date} / {router.query.message} / {router.query.time}
-                </Col>
                 <Col>
                     <Input
                         bordered
                         fullWidth
                         labelPlaceholder="Name"
                         placeholder="Your Title"
-                        onChange={(event) => setData({ ...data, message: event.target.value })} />
+                        onChange={(event) => setCountdownMessage(event.target.value)} />
                 </Col>
                 <Col>
                     <Input
@@ -32,7 +28,7 @@ export const EventTimeInputForm = () => {
                         fullWidth
                         label="Date"
                         type="date"
-                        onChange={(event) => setData({ ...data, date: event.target.value })}
+                        onChange={(event) => setCountdownDate(event.target.value)}
                     />
                 </Col>
                 <Col>
@@ -41,11 +37,11 @@ export const EventTimeInputForm = () => {
                         fullWidth
                         label="Time"
                         type="time"
-                        onChange={(event) => setData({ ...data, time: event.target.value })}
+                        onChange={(event) => setCoutndownTime(event.target.value)}
                     />
                 </Col>
                 <Col>
-                    <Button css={{ width: '100%' }} onPress={() => { router.push({ pathname: "", query: data }) }}>
+                    <Button css={{ width: '100%' }} onPress={createTimerCallback}>
                         Create Countdown Timer
                     </Button>
                 </Col>
